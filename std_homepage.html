@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/std_homepage.css" />
+    <script
+      src="https://kit.fontawesome.com/a2be86925b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <h1>ระบบจัดการโครงงาน</h1>
+      <h2>นักศึกษา</h2>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-role">
+        <div class="nav-tab active">
+          <i class="fa-solid fa-house"></i>
+          <a href="std_homepage.html"><span>หน้าแรก</span></a>
+        </div>
+        <div class="nav-tab">
+          <i class="fa-solid fa-user"></i>
+          <span>ข้อมูลผู้ใช้</span>
+        </div>
+        <div class="nav-tab logout">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <a href="login.html"><span>ออกจากระบบ</span></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="content">
+      <!-- Top row -->
+      <div class="top-row">
+        <div class="card">
+          <div class="card-top">
+            <p>สถานะโครงงาน</p>
+            <i class="fa-solid fa-check check-icon"></i>
+          </div>
+          <span class="status">ไม่มี</span>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <p>ความก้าวหน้าของโครงงาน</p>
+            <i class="fa-solid fa-clock clock-icon"></i>
+          </div>
+          <div class="progress">
+            <div class="progress-bar" style="width: 0%"></div>
+          </div>
+          <small>0%</small>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <p>อัปเดตโครงงานล่าสุด</p>
+            <i class="fa-solid fa-calendar-days cal-icon"></i>
+          </div>
+          <span class="date">30/8/2568</span>
+        </div>
+      </div>
+
+      <!-- Grid of 4 -->
+      <div class="grid-box">
+        <div class="card">
+          <h3>เสนอโครงงาน</h3>
+          <p>เริ่มต้นโครงงานด้วยการเสนอโครงการใหม่ของคุณ</p>
+          <a href="pre_project.html"><button class="btn">เสนอหัวข้อโครงงาน</button></a>
+        </div>
+
+        <div class="card">
+          <h3>ความคิดเห็นจากที่ปรึกษา</h3>
+          <p>ยังไม่มีความคิดเห็น</p>
+        </div>
+
+        <div class="card">
+          <h3>ติดตามผลสอบหัวข้อ</h3>
+          <p>-</p>
+        </div>
+
+        <div class="card">
+          <h3>ยื่นสอบจบ</h3>
+          <p class="status-text">ไม่สามารถยื่นสอบได้</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

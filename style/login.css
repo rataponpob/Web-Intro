@@ -1,0 +1,131 @@
+
+/* reset พื้นฐาน */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f0f0;
+  font-family: "Prompt", "Tahoma", sans-serif;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  justify-content: center;
+  min-height: 100vh;  
+  gap: 20px;
+}
+
+/* role (สลับบทบาท) */
+.role {
+  background-color: #e5e5e5;
+  border-radius: 30px;
+  height: 50px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.tab.active {
+  background-color: #fff;
+  font-weight: bold;
+  transform: scale(1.05); 
+}
+
+/* กล่อง login + ข่าวสาร */
+.login-notice {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+
+/* login box */
+.login-box {
+  height: 320px;
+  width: 430px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.login-box .card-header {
+  background-color: black;
+  color: white;
+}
+
+/* notice box */
+.notice-box {
+  height: 320px;
+  width: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.notice-box .card-header {
+  background-color: black;
+  color: white;
+}
+
+/* header ของ card */
+.card-header {
+  text-align: left;
+  font-size: 16px;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .login-notice {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .login-box, 
+  .notice-box {
+    width: 90%;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 576px) {
+  .role {
+    width: 90%;
+    font-size: 12px;
+  }
+
+  .tab {
+    font-size: 12px;
+    padding: 6px 0;
+  }
+
+  .login-box,
+  .notice-box {
+    width: 100%;
+    height: auto;     /* ให้ยืดตามเนื้อหา */
+  }
+
+  .card-header {
+    font-size: 14px;
+  }
+}
