@@ -1,376 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>นำเสนอโครงงาน</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./style/pre_project.css" />
-    <script
-      src="https://kit.fontawesome.com/a2be86925b.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
+    <script src="https://kit.fontawesome.com/a2be86925b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
     <!-- Header -->
     <header class="header">
-      <h1>ระบบจัดการโครงงาน</h1>
-      <h2>นักศึกษา</h2>
+        <h1>ระบบจัดการโครงงานพิเศษและโครงงานสหกิจ</h1>
+        <h2>นักศึกษา</h2>
     </header>
 
     <!-- Navigation -->
     <nav class="navbar">
-      <div class="nav-role">
-        <div class="nav-tab">
-          <i class="fa-solid fa-house"></i>
-          <a href="std_homepage.html"><span>หน้าแรก</span></a>
+        <div class="nav-role">
+            <div class="nav-tab">
+                <i class="fa-solid fa-house"></i>
+                <a href="std_homepage.html"><span>หน้าแรก</span></a>
+            </div>
+            <div class="nav-tab">
+                <i class="fa-solid fa-user"></i>
+                <a href="user.html"><span>ข้อมูลผู้ใช้</span></a>
+            </div>
+            <div class="nav-tab logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <a href="index.html"><span>ออกจากระบบ</span></a>
+            </div>
         </div>
-        <div class="nav-tab">
-          <i class="fa-solid fa-user"></i>
-          <span>ข้อมูลผู้ใช้</span>
-        </div>
-        <div class="nav-tab logout">
-          <i class="fa-solid fa-right-from-bracket"></i>
-          <a href="index.html"><span>ออกจากระบบ</span></a>
-        </div>
-      </div>
     </nav>
 
     <!-- Content -->
     <main class="content">
-      <!-- Top row -->
-      <div class="top-row">
-        <div class="card">
-          <div class="card-top">
-            <p>สถานะโครงงาน</p>
-            <i class="fa-solid fa-check check-icon"></i>
-          </div>
-          <span class="status">ไม่มี</span>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <p>ความก้าวหน้าของโครงงาน</p>
-            <i class="fa-solid fa-clock clock-icon"></i>
-          </div>
-          <div class="progress">
-            <div class="progress-bar" style="width: 0%"></div>
-          </div>
-          <small>0%</small>
-        </div>
-
-        <div class="card">
-          <div class="card-top">
-            <p>อัปเดตโครงงานล่าสุด</p>
-            <i class="fa-solid fa-calendar-days cal-icon"></i>
-          </div>
-          <span class="date">30/8/2568</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2 class="text-center">แบบเสนอโครงงานปริญญานิพนธ์</h2>
-        <form id="projectForm">
-          <!-- Project name -->
-          <div class="mb-3">
-            <label class="form-label">ชื่อโครงงาน (ภาษาไทย)</label>
-            <input type="text" class="form-control rounded-pill" />
-          </div>
-          <div class="mb-3">
-            <label class="form-label">ชื่อโครงงาน (ภาษาอังกฤษ)</label>
-            <input type="text" class="form-control rounded-pill" />
-          </div>
-
-          <!-- Member group -->
-          <div id="member-container">
-            <div class="row g-2 member-row">
-              <div class="col-md-4">
-                <label class="form-label">ชื่อ</label>
-                <input type="text" class="form-control rounded-pill" />
-              </div>
-              <div class="col-md-4">
-                <label class="form-label">นามสกุล</label>
-                <input type="text" class="form-control rounded-pill" />
-              </div>
-              <div class="col-md-4">
-                <label class="form-label">รหัสนักศึกษา</label>
-                <input type="text" class="form-control rounded-pill" />
-              </div>
+        <!-- Top row -->
+        <div class="top-row">
+            <div class="card">
+                <div class="card-top">
+                    <p>สถานะโครงงาน</p>
+                    <i class="fa-solid fa-check check-icon"></i>
+                </div>
+                <span class="status">ไม่มี</span>
             </div>
-          </div>
 
-          <div class="text-center my-2">
-            <button
-              type="button"
-              id="addMember"
-              class="btn btn-outline-dark btn-circle"
-            >
+            <div class="card">
+                <div class="card-top">
+                    <p>ความก้าวหน้าของโครงงาน</p>
+                    <i class="fa-solid fa-clock clock-icon"></i>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 0%"></div>
+                </div>
+                <small>0%</small>
+            </div>
+
+            <div class="card">
+                <div class="card-top">
+                    <p>อัปเดตโครงงานล่าสุด</p>
+                    <i class="fa-solid fa-calendar-days cal-icon"></i>
+                </div>
+                <span class="date">30/8/2568</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="text-center">แบบเสนอโครงงานปริญญานิพนธ์</h2>
+            <form id="projectForm">
+                <!-- Project name -->
+                <div class="mb-3">
+                    <label class="form-label">ชื่อโครงงาน (ภาษาไทย)</label>
+                    <input type="text" class="form-control rounded-pill" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">ชื่อโครงงาน (ภาษาอังกฤษ)</label>
+                    <input type="text" class="form-control rounded-pill" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">ประเภทโครงงาน</label>
+                    <select class="form-select rounded-pill">
+              <option selected disabled>เลือกประเภท</option>
+              <option value="1">โครงงานพิเศษ</option>
+              <option value="2">โครงงานสหกิจ</option>
+            </select>
+                </div>
+
+                <!-- Member group -->
+                <div id="member-container">
+                    <div class="row g-2 member-row">
+                        <div class="col-md-4">
+                            <label class="form-label">ชื่อ</label>
+                            <input type="text" class="form-control rounded-pill" />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">นามสกุล</label>
+                            <input type="text" class="form-control rounded-pill" />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">รหัสนักศึกษา</label>
+                            <input type="text" class="form-control rounded-pill" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center my-2">
+                    <button type="button" id="addMember" class="btn btn-outline-dark btn-circle">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+                </div>
+
+                <!-- Faculty / Major -->
+                <div class="row g-2 mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">คณะ</label>
+                        <select class="form-select rounded-pill">
+              <option value="fitm">คณะเทคโนโลยีและการจัดการอุตสาหกรรม</option>
+            </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">สาขา</label>
+                        <select class="form-select rounded-pill">
+              <option selected disabled>เลือกสาขา</option>
+              <option value="it">IT</option>
+              <option value="iti">ITI</option>
+              <option value="ine">INE</option>
+              <option value="inet">INET</option>
+            </select>
+                    </div>
+                </div>
+
+                <!-- Advisor -->
+                <div class="row g-2 mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">อาจารย์ที่ปรึกษา</label>
+                        <select class="form-select rounded-pill">
+              <option selected disabled>เลือกอาจารย์ที่ปรึกษา</option>
+              <option>รศ.ดร.อนิราช มิ่งขวัญ</option>
+              <option>ผศ.อรบุษป์ วุฒิกมลชัย</option>
+              <option>ผศ.ดร.บีสุดา ดาวเรือง</option>
+              <option>ผศ.ดร.ขนิษฐา นามี</option>
+              <option>อ.ดร.กาญจน ณ ศรีธะ</option>
+              <option>ผศ.นพดล บูรณ์กุศล</option>
+              <option>ผศ.จสต.นพเก้า ทองใบ</option>
+              <option>ผศ.ดร.นิติการ นาคเจือทอง</option>
+              <option>ผศ.ดร.นัฎฐพันธ์ นาคพงษ์</option>
+              <option>ผศ.นิมิต ศรีคำทา</option>
+              <option>อ.ดร.พิทย์พิมล ชูรอด</option>
+              <option>ผศ.ดร.พาฝัน ดวงไพศาล</option>
+              <option>อ.ดร.ประดิษฐ์ พิทักษ์เสถียรกุล</option>
+              <option>ผศ.พีระศักดิ์ เสรีกุล</option>
+              <option>ผศ.สมชัย เชียงพงศ์พันธุ์</option>
+              <option>ผศ.ดร.สุปีติ กุลจันทร์</option>
+              <option>ผศ.สิวาลัย จินเจือ</option>
+              <option>ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
+              <option>ผศ.ดร.ศรายุทธ ธเนศสกุลวัฒนา</option>
+              <option>อ.ดร.ศิรินทรา แว่วศรี</option>
+              <option>อ.ดร.วัชรชัย คงศิริวัฒนา</option>
+              <option>ผศ.ดร.วันทนี ประจวบศุภกิจ</option>
+              <option>รศ.ดร.ยุพิน สรรพคุณ</option>
+            </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">อาจารย์ที่ปรึกษาร่วม (ถ้ามี)</label>
+                        <select class="form-select rounded-pill">
+              <option selected disabled>เลือกอาจารย์ที่ปรึกษาร่วม</option>
+              <option>ไม่มี</option>
+              <option>รศ.ดร.อนิราช มิ่งขวัญ</option>
+              <option>ผศ.อรบุษป์ วุฒิกมลชัย</option>
+              <option>ผศ.ดร.บีสุดา ดาวเรือง</option>
+              <option>ผศ.ดร.ขนิษฐา นามี</option>
+              <option>อ.ดร.กาญจน ณ ศรีธะ</option>
+              <option>ผศ.นพดล บูรณ์กุศล</option>
+              <option>ผศ.จสต.นพเก้า ทองใบ</option>
+              <option>ผศ.ดร.นิติการ นาคเจือทอง</option>
+              <option>ผศ.ดร.นัฎฐพันธ์ นาคพงษ์</option>
+              <option>ผศ.นิมิต ศรีคำทา</option>
+              <option>อ.ดร.พิทย์พิมล ชูรอด</option>
+              <option>ผศ.ดร.พาฝัน ดวงไพศาล</option>
+              <option>อ.ดร.ประดิษฐ์ พิทักษ์เสถียรกุล</option>
+              <option>ผศ.พีระศักดิ์ เสรีกุล</option>
+              <option>ผศ.สมชัย เชียงพงศ์พันธุ์</option>
+              <option>ผศ.ดร.สุปีติ กุลจันทร์</option>
+              <option>ผศ.สิวาลัย จินเจือ</option>
+              <option>ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
+              <option>ผศ.ดร.ศรายุทธ ธเนศสกุลวัฒนา</option>
+              <option>อ.ดร.ศิรินทรา แว่วศรี</option>
+              <option>อ.ดร.วัชรชัย คงศิริวัฒนา</option>
+              <option>ผศ.ดร.วันทนี ประจวบศุภกิจ</option>
+              <option>รศ.ดร.ยุพิน สรรพคุณ</option>
+            </select>
+                    </div>
+                </div>
+
+                <!-- วัตถุประสงค์ -->
+                <div class="mb-3">
+                    <label class="form-label">วัตถุประสงค์ของโครงงาน</label>
+                    <div id="objective-container">
+                        <input type="text" class="form-control rounded-pill mb-2" placeholder="กรอกวัตถุประสงค์" />
+                    </div>
+                    <div class="text-center">
+                        <button type="button" id="addObjective" class="btn btn-circle">
               <i class="fa-solid fa-plus"></i>
             </button>
-          </div>
+                    </div>
+                </div>
 
-          <!-- Faculty / Major -->
-          <div class="row g-2 mb-3">
-            <div class="col-md-6">
-              <label class="form-label">คณะ</label>
-              <select class="form-select rounded-pill">
-                <option value="fitm">คณะเทคโนโลยีและการจัดการอุตสาหกรรม</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">สาขา</label>
-              <select class="form-select rounded-pill">
-                <option selected disabled>เลือกสาขา</option>
-                <option value="it">IT</option>
-                <option value="iti">ITI</option>
-                <option value="ine">INE</option>
-                <option value="inet">INET</option>
-              </select>
-            </div>
-          </div>
+                <!-- แนวคิดและหลักการที่สำคัญ -->
+                <div class="mb-3">
+                    <label class="form-label">แนวคิดและหลักการที่สำคัญ</label>
+                    <textarea class="form-control" rows="4" placeholder="พิมพ์เนื้อหา..."></textarea>
+                </div>
 
-          <!-- Advisor -->
-          <div class="row g-2 mb-3">
-            <div class="col-md-6">
-              <label class="form-label">อาจารย์ที่ปรึกษา</label>
-              <select class="form-select rounded-pill">
-                <option selected disabled>เลือกอาจารย์ที่ปรึกษา</option>
-                <option>รศ.ดร.อนิราช มิ่งขวัญ</option>
-                <option>ผศ.อรบุษป์ วุฒิกมลชัย</option>
-                <option>ผศ.ดร.บีสุดา ดาวเรือง</option>
-                <option>ผศ.ดร.ขนิษฐา นามี</option>
-                <option>อ.ดร.กาญจน ณ ศรีธะ</option>
-                <option>ผศ.นพดล บูรณ์กุศล</option>
-                <option>ผศ.จสต.นพเก้า ทองใบ</option>
-                <option>ผศ.ดร.นิติการ นาคเจือทอง</option>
-                <option>ผศ.ดร.นัฎฐพันธ์ นาคพงษ์</option>
-                <option>ผศ.นิมิต ศรีคำทา</option>
-                <option>อ.ดร.พิทย์พิมล ชูรอด</option>
-                <option>ผศ.ดร.พาฝัน ดวงไพศาล</option>
-                <option>อ.ดร.ประดิษฐ์ พิทักษ์เสถียรกุล</option>
-                <option>ผศ.พีระศักดิ์ เสรีกุล</option>
-                <option>ผศ.สมชัย เชียงพงศ์พันธุ์</option>
-                <option>ผศ.ดร.สุปีติ กุลจันทร์</option>
-                <option>ผศ.สิวาลัย จินเจือ</option>
-                <option>ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
-                <option>ผศ.ดร.ศรายุทธ ธเนศสกุลวัฒนา</option>
-                <option>อ.ดร.ศิรินทรา แว่วศรี</option>
-                <option>อ.ดร.วัชรชัย คงศิริวัฒนา</option>
-                <option>ผศ.ดร.วันทนี ประจวบศุภกิจ</option>
-                <option>รศ.ดร.ยุพิน สรรพคุณ</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">อาจารย์ที่ปรึกษาร่วม (ถ้ามี)</label>
-              <select class="form-select rounded-pill">
-                <option selected disabled>เลือกอาจารย์ที่ปรึกษาร่วม</option>
-                <option>ไม่มี</option>
-                <option>รศ.ดร.อนิราช มิ่งขวัญ</option>
-                <option>ผศ.อรบุษป์ วุฒิกมลชัย</option>
-                <option>ผศ.ดร.บีสุดา ดาวเรือง</option>
-                <option>ผศ.ดร.ขนิษฐา นามี</option>
-                <option>อ.ดร.กาญจน ณ ศรีธะ</option>
-                <option>ผศ.นพดล บูรณ์กุศล</option>
-                <option>ผศ.จสต.นพเก้า ทองใบ</option>
-                <option>ผศ.ดร.นิติการ นาคเจือทอง</option>
-                <option>ผศ.ดร.นัฎฐพันธ์ นาคพงษ์</option>
-                <option>ผศ.นิมิต ศรีคำทา</option>
-                <option>อ.ดร.พิทย์พิมล ชูรอด</option>
-                <option>ผศ.ดร.พาฝัน ดวงไพศาล</option>
-                <option>อ.ดร.ประดิษฐ์ พิทักษ์เสถียรกุล</option>
-                <option>ผศ.พีระศักดิ์ เสรีกุล</option>
-                <option>ผศ.สมชัย เชียงพงศ์พันธุ์</option>
-                <option>ผศ.ดร.สุปีติ กุลจันทร์</option>
-                <option>ผศ.สิวาลัย จินเจือ</option>
-                <option>ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
-                <option>ผศ.ดร.ศรายุทธ ธเนศสกุลวัฒนา</option>
-                <option>อ.ดร.ศิรินทรา แว่วศรี</option>
-                <option>อ.ดร.วัชรชัย คงศิริวัฒนา</option>
-                <option>ผศ.ดร.วันทนี ประจวบศุภกิจ</option>
-                <option>รศ.ดร.ยุพิน สรรพคุณ</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- วัตถุประสงค์ -->
-          <div class="mb-3">
-            <label class="form-label">วัตถุประสงค์ของโครงงาน</label>
-            <div id="objective-container">
-              <input
-                type="text"
-                class="form-control rounded-pill mb-2"
-                placeholder="กรอกวัตถุประสงค์"
-              />
-            </div>
-            <div class="text-center">
-              <button type="button" id="addObjective" class="btn btn-circle">
-                <i class="fa-solid fa-plus"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- แนวคิดและหลักการที่สำคัญ -->
-          <div class="mb-3">
-            <label class="form-label">แนวคิดและหลักการที่สำคัญ</label>
-            <textarea
-              class="form-control"
-              rows="4"
-              placeholder="พิมพ์เนื้อหา..."
-            ></textarea>
-          </div>
-
-          <!-- ขอบเขตของโครงงาน -->
-          <div class="mb-3">
-            <label class="form-label">ขอบเขตของโครงงาน</label>
-            <div id="scope-container">
-              <div class="mb-2 scope-row">
-                <input
-                  type="text"
-                  class="form-control rounded-pill"
-                  placeholder="ขอบเขต"
-                />
-              </div>
-            </div>
-            <div class="text-center my-2">
-              <button
-                type="button"
-                id="addScope"
-                class="btn btn-outline-dark btn-circle"
-              >
-                <i class="fa-solid fa-plus"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- ประโยชน์ที่คาดว่าจะได้รับจากโครงงาน -->
-          <div class="mb-3">
-            <label class="form-label"
-              >ประโยชน์ที่คาดว่าจะได้รับจากโครงงาน</label
-            >
-            <div id="benefit-container">
-              <div class="mb-2 benefit-row">
-                <input
-                  type="text"
-                  class="form-control rounded-pill"
-                  placeholder="ประโยชน์"
-                />
-              </div>
-            </div>
-            <div class="text-center my-2">
-              <button
-                type="button"
-                id="addBenefit"
-                class="btn btn-outline-dark btn-circle"
-              >
-                <i class="fa-solid fa-plus"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- รายละเอียดของโครงงาน -->
-          <div class="mb-3">
-            <label class="form-label">รายละเอียดของโครงงาน</label>
-            <textarea
-              class="form-control"
-              rows="4"
-              placeholder="พิมพ์รายละเอียดโครงงาน..."
-            ></textarea>
-          </div>
-
-          <!-- File upload -->
-          <div class="mb-3">
-            <label class="form-label">อัพโหลดไฟล์</label>
-            <input type="file" class="form-control" />
-          </div>
-
-          <!-- Buttons -->
-          <div class="d-flex justify-content-between mt-4">
-            <button type="submit" class="btn btn-dark px-4 rounded-pill">
-              ยืนยัน
+                <!-- ขอบเขตของโครงงาน -->
+                <div class="mb-3">
+                    <label class="form-label">ขอบเขตของโครงงาน</label>
+                    <div id="scope-container">
+                        <div class="mb-2 scope-row">
+                            <input type="text" class="form-control rounded-pill" placeholder="ขอบเขต" />
+                        </div>
+                    </div>
+                    <div class="text-center my-2">
+                        <button type="button" id="addScope" class="btn btn-outline-dark btn-circle">
+              <i class="fa-solid fa-plus"></i>
             </button>
-            <a href="std_homepage.html" class="btn btn-danger px-4 rounded-pill"
-              >กลับ</a
-            >
-          </div>
-        </form>
-      </div>
+                    </div>
+                </div>
+
+                <!-- ประโยชน์ที่คาดว่าจะได้รับจากโครงงาน -->
+                <div class="mb-3">
+                    <label class="form-label">ประโยชน์ที่คาดว่าจะได้รับจากโครงงาน</label>
+                    <div id="benefit-container">
+                        <div class="mb-2 benefit-row">
+                            <input type="text" class="form-control rounded-pill" placeholder="ประโยชน์" />
+                        </div>
+                    </div>
+                    <div class="text-center my-2">
+                        <button type="button" id="addBenefit" class="btn btn-outline-dark btn-circle">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+                    </div>
+                </div>
+
+                <!-- รายละเอียดของโครงงาน -->
+                <div class="mb-3">
+                    <label class="form-label">รายละเอียดของโครงงาน</label>
+                    <textarea class="form-control" rows="4" placeholder="พิมพ์รายละเอียดโครงงาน..."></textarea>
+                </div>
+
+                <!-- File upload -->
+                <div class="mb-3">
+                    <label class="form-label">อัพโหลดไฟล์</label>
+                    <input type="file" class="form-control" />
+                </div>
+
+                <!-- Buttons -->
+                <div class="d-flex justify-content-between mt-4">
+                    <a href="std_homepage.html" class="btn btn-danger px-4 rounded-pill">กลับ</a>
+                    <button type="submit" class="btn btn-dark px-4 rounded-pill" id="submitBtn">
+            ยืนยัน
+          </button>
+                </div>
+            </form>
+        </div>
     </main>
 
+    <!-- โหลด SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
-      // ปุ่มเพิ่มสมาชิก
-      document
-        .getElementById("addMember")
-        .addEventListener("click", function () {
-          const container = document.getElementById("member-container");
-          const memberCount =
-            container.getElementsByClassName("member-row").length;
+        // ปุ่มเพิ่มสมาชิก
+        document
+            .getElementById("addMember")
+            .addEventListener("click", function() {
+                const container = document.getElementById("member-container");
+                const memberCount =
+                    container.getElementsByClassName("member-row").length;
 
-          if (memberCount >= 4) {
-            alert("เพิ่มสมาชิกได้สูงสุด 4 คนเท่านั้น");
-            return;
-          }
+                if (memberCount >= 4) {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "ไม่สามารถเพิ่มสมาชิกได้",
+                        text: "สามารถเพิ่มสมาชิกได้สูงสุด 4 คนเท่านั้น",
+                        confirmButtonColor: "#252525",
+                    });
+                    return;
+                }
 
-          const newRow = document.createElement("div");
-          newRow.classList.add("row", "g-2", "member-row", "mt-2");
-          newRow.innerHTML = `
-        <div class="col-md-4">
-          <input type="text" class="form-control rounded-pill" placeholder="ชื่อ" />
-        </div>
-        <div class="col-md-4">
-          <input type="text" class="form-control rounded-pill" placeholder="นามสกุล" />
-        </div>
-        <div class="col-md-4">
-          <input type="text" class="form-control rounded-pill" placeholder="รหัสนักศึกษา" />
-        </div>
-      `;
-          container.appendChild(newRow);
-        });
+                const newRow = document.createElement("div");
+                newRow.classList.add("row", "g-2", "member-row", "mt-2");
+                newRow.innerHTML = `
+      <div class="col-md-4">
+        <input type="text" class="form-control rounded-pill" placeholder="ชื่อ" />
+      </div>
+      <div class="col-md-4">
+        <input type="text" class="form-control rounded-pill" placeholder="นามสกุล" />
+      </div>
+      <div class="col-md-4">
+        <input type="text" class="form-control rounded-pill" placeholder="รหัสนักศึกษา" />
+      </div>
+    `;
+                container.appendChild(newRow);
+            });
 
-      // ปุ่มเพิ่มวัตถุประสงค์
-      document
-        .getElementById("addObjective")
-        .addEventListener("click", function () {
-          const container = document.getElementById("objective-container");
+        // ปุ่มเพิ่มวัตถุประสงค์
+        document
+            .getElementById("addObjective")
+            .addEventListener("click", function() {
+                const container = document.getElementById("objective-container");
+                const newRow = document.createElement("div");
+                newRow.classList.add("mb-2", "objective-row");
+                newRow.innerHTML = `
+      <input type="text" class="form-control rounded-pill" placeholder="วัตถุประสงค์" />
+    `;
+                container.appendChild(newRow);
+            });
 
-          const newRow = document.createElement("div");
-          newRow.classList.add("mb-2", "objective-row");
-          newRow.innerHTML = `
-        <input type="text" class="form-control rounded-pill" placeholder="วัตถุประสงค์" />
-      `;
-          container.appendChild(newRow);
-        });
-      // เพิ่มขอบเขต
-      document
-        .getElementById("addScope")
-        .addEventListener("click", function () {
-          const container = document.getElementById("scope-container");
-          const newRow = document.createElement("div");
-          newRow.classList.add("mb-2", "scope-row");
-          newRow.innerHTML = `
+        // เพิ่มขอบเขต
+        document
+            .getElementById("addScope")
+            .addEventListener("click", function() {
+                const container = document.getElementById("scope-container");
+                const newRow = document.createElement("div");
+                newRow.classList.add("mb-2", "scope-row");
+                newRow.innerHTML = `
       <input type="text" class="form-control rounded-pill" placeholder="ขอบเขต" />
     `;
-          container.appendChild(newRow);
-        });
+                container.appendChild(newRow);
+            });
 
-      // เพิ่มประโยชน์
-      document
-        .getElementById("addBenefit")
-        .addEventListener("click", function () {
-          const container = document.getElementById("benefit-container");
-          const newRow = document.createElement("div");
-          newRow.classList.add("mb-2", "benefit-row");
-          newRow.innerHTML = `
+        // เพิ่มประโยชน์
+        document
+            .getElementById("addBenefit")
+            .addEventListener("click", function() {
+                const container = document.getElementById("benefit-container");
+                const newRow = document.createElement("div");
+                newRow.classList.add("mb-2", "benefit-row");
+                newRow.innerHTML = `
       <input type="text" class="form-control rounded-pill" placeholder="ประโยชน์" />
     `;
-          container.appendChild(newRow);
-        });
+                container.appendChild(newRow);
+            });
+
+        // เมื่อกด submit
+        document
+            .getElementById("projectForm")
+            .addEventListener("submit", function(e) {
+                e.preventDefault(); // กันไม่ให้รีเฟรช
+
+                Swal.fire({
+                    icon: "success",
+                    title: "ยื่นสอบหัวข้อสำเร็จ",
+                    html: "ระบบได้รับคำร้องขอยื่นสอบหัวข้อของท่านเรียบร้อยแล้ว<br>กรุณารอติดตามการแจ้งวัน เวลา และสถานที่สอบ ซึ่งจะแจ้งให้ทราบอีกครั้งผ่านระบบ",
+                    confirmButtonText: "ตกลง",
+                    confirmButtonColor: "#252525",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "std_homepage_1.html";
+                    }
+                });
+            });
     </script>
-  </body>
+</body>
+
 </html>

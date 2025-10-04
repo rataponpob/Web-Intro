@@ -129,6 +129,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     transition: all 0.3s ease;
+    margin-bottom: 10px;
 }
 
 .card {
@@ -153,12 +154,20 @@ body {
 /* ข้อความใน card */
 
 .card p,
-.card span,
+.card txt,
 .card h3,
 .card small {
     color: #444;
     font-size: 14px;
     margin: 4px 0;
+}
+
+.number {
+    color: #555555;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 4px 0;
+    text-align: center;
 }
 
 .card-top {
@@ -193,9 +202,14 @@ body {
     background: #e6f4ea;
 }
 
+.bell-icon {
+    color: #17447ebd;
+    background: #e6f4ea;
+}
+
 .clock-icon {
-    color: #007bff;
-    background: #e7f1ff;
+    color: #1f1f1f;
+    background: #58595a31;
 }
 
 .cal-icon {
@@ -207,10 +221,7 @@ body {
     display: inline-block;
     text-align: center;
     min-width: 80px;
-    padding: 6px 10px;
-    background: #f1f3f5;
-    border-radius: 50px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
     margin-top: auto;
 }
@@ -299,22 +310,105 @@ body {
 /* Progress bar */
 
 .progress {
-    width: 100%;
-    height: 10px;
-    background: #e5e5e5;
-    border-radius: 5px;
-    margin: 8px 0;
+    height: 16px;
+    background-color: #f0f0f0;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.progress-bar {
-    height: 100%;
-    background: #007bff;
-    border-radius: 5px;
-    transition: width 0.3s;
+.progress-bar-custom {
+    background: linear-gradient(90deg, #52c755, #147917);
+    font-weight: 600;
+    font-size: 13px;
+    position: relative;
+    transition: width 0.5s ease-in-out;
 }
 
-.progress-bar.done {
-    background: gray;
+
+/* ข้อความเปอร์เซ็นต์ */
+
+.progress-text {
+    position: absolute;
+    right: 10px;
+    /* อยู่ด้านขวาของ bar */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 10px;
+}
+
+#project {
+    margin-bottom: 15px;
+}
+
+.project {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.project .action-btn {
+    padding: 2px 16px;
+    border: 1px solid #222;
+    /* <-- ใส่เส้นขอบดำ */
+    background: #fff;
+    color: #252525;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+    /* align-self: flex-start; */
+}
+
+.modal-content {
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.project .action-btn:hover {
+    background: #252525;
+    /* เวลาชี้เปลี่ยนสีพื้น */
+    color: #fff;
+    /* ตัวหนังสือเป็นขาว */
+}
+
+.modal-content {
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+
+/* ให้ Bootstrap สีเขียว-แดง ใช้ได้ */
+
+.btn-success {
+    background-color: #28a745 !important;
+    border: none !important;
+    color: white !important;
+}
+
+.btn-success:hover {
+    background-color: #218838 !important;
+}
+
+.btn-danger {
+    background-color: #dc3545 !important;
+    border: none !important;
+    color: white !important;
+}
+
+.btn-danger:hover {
+    background-color: #c82333 !important;
 }
 
 

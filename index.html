@@ -1,112 +1,108 @@
 <!DOCTYPE html>
 <html lang="th">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login_Student</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./style/login.css" />
-    <script
-      src="https://kit.fontawesome.com/a2be86925b.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <div class="main-container">
-      <!-- สลับบทบาท -->
-      <div class="role mb-4">
-        <div class="tab active" id="student-tab">
-          <i class="fa-regular fa-user"></i>
-          <span>นักศึกษา</span>
-        </div>
-        <div class="tab" id="teacher-tab">
-          <i class="fa-solid fa-graduation-cap"></i>
-          <span>อาจารย์ที่ปรึกษา</span>
-        </div>
-      </div>
+    <script src="https://kit.fontawesome.com/a2be86925b.js" crossorigin="anonymous"></script>
+</head>
 
-      <!-- login + ข่าวสาร -->
-      <div class="login-notice">
-        <!-- กล่อง login -->
-        <div class="card login-box">
-          <div class="card-header text-white rounded-top">
-            <h5>ระบบจัดการโครงงานพิเศษ</h5>
-            <small>สำหรับนักศึกษา</small>
-          </div>
-          <div class="card-body">
-            <form id="loginForm">
-              <div class="mb-3">
-                <label class="form-label">
+<body>
+    <div class="main-container">
+        <!-- สลับบทบาท -->
+        <div class="role mb-4">
+            <div class="tab active" id="student-tab">
+                <i class="fa-regular fa-user"></i>
+                <span>นักศึกษา</span>
+            </div>
+            <div class="tab" id="teacher-tab">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>ผู้ดูแล</span>
+            </div>
+        </div>
+
+        <!-- login + ข่าวสาร -->
+        <div class="login-notice">
+            <!-- กล่อง login -->
+            <div class="card login-box">
+                <div class="card-header text-white rounded-top">
+                    <h5>ระบบจัดการโครงงานพิเศษและโครงงานสหกิจ</h5>
+                    <small>สำหรับนักศึกษา</small>
+                </div>
+                <div class="card-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label class="form-label">
                   <i class="fa-regular fa-user"></i> ชื่อผู้ใช้
                 </label>
-                <input type="text" class="form-control" style="border-radius: 16px;"/>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">
+                            <input type="text" class="form-control" style="border-radius: 16px;" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">
                   <i class="fa-solid fa-key"></i> รหัสผ่าน
                 </label>
-                <input type="password" class="form-control" style="border-radius: 16px;"/>
-              </div>
-              <button type="submit" class="btn btn-dark w-100 rounded-pill">
+                            <input type="password" class="form-control" style="border-radius: 16px;" />
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100 rounded-pill">
                 เข้าสู่ระบบ
               </button></a>
-            </form>
-          </div>
-        </div>
+                    </form>
+                </div>
+            </div>
 
-        <!-- ข่าวสาร -->
-        <div class="card notice-box">
-          <div class="card-header text-white text-center">
-            <p>ข่าวประกาศจากภาควิชา</p>
-          </div>
-          <div class="card-body">
-            <p>30/8/2568 - สอบโครงงาน</p>
-          </div>
+            <!-- ข่าวสาร -->
+            <div class="card notice-box">
+                <div class="card-header text-white text-center">
+                    <p>ข่าวประกาศจากภาควิชา</p>
+                </div>
+                <div class="card-body">
+                    <p>30/8/2568 - สอบโครงงาน</p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </body>
+</body>
 
-  <script>
-  const studentTab = document.getElementById("student-tab");
-  const teacherTab = document.getElementById("teacher-tab");
-  const loginHeader = document.querySelector(".login-box .card-header h5");
-  const loginSmall = document.querySelector(".login-box .card-header small");
-  const loginForm = document.getElementById("loginForm");
+<script>
+    const studentTab = document.getElementById("student-tab");
+    const teacherTab = document.getElementById("teacher-tab");
+    const loginHeader = document.querySelector(".login-box .card-header h5");
+    const loginSmall = document.querySelector(".login-box .card-header small");
+    const loginForm = document.getElementById("loginForm");
 
-  let currentRole = "student"; // ค่าเริ่มต้น = นักศึกษา
+    let currentRole = "student"; // ค่าเริ่มต้น = นักศึกษา
 
-  studentTab.addEventListener("click", () => {
-    studentTab.classList.add("active");
-    teacherTab.classList.remove("active");
-    loginHeader.textContent = "ระบบจัดการโครงงานพิเศษ";
-    loginSmall.textContent = "สำหรับนักศึกษา";
-    currentRole = "student";
-  });
+    studentTab.addEventListener("click", () => {
+        studentTab.classList.add("active");
+        teacherTab.classList.remove("active");
+        loginHeader.textContent = "ระบบจัดการโครงงานพิเศษ";
+        loginSmall.textContent = "สำหรับนักศึกษา";
+        currentRole = "student";
+    });
 
-  teacherTab.addEventListener("click", () => {
-    teacherTab.classList.add("active");
-    studentTab.classList.remove("active");
-    loginHeader.textContent = "ระบบจัดการโครงงานพิเศษ";
-    loginSmall.textContent = "สำหรับอาจารย์ที่ปรึกษา";
-    currentRole = "teacher";
-  });
+    teacherTab.addEventListener("click", () => {
+        teacherTab.classList.add("active");
+        studentTab.classList.remove("active");
+        loginHeader.textContent = "ระบบจัดการโครงงานพิเศษ";
+        loginSmall.textContent = "สำหรับผู้ดูแล";
+        currentRole = "teacher";
+    });
 
-  // เวลา submit form
-  loginForm.addEventListener("submit", function (e) {
-    e.preventDefault(); // กันไม่ให้รีเฟรชหน้า
+    // เวลา submit form
+    loginForm.addEventListener("submit", function(e) {
+        e.preventDefault(); // กันไม่ให้รีเฟรชหน้า
 
-    if (currentRole === "student") {
-      window.location.href = "std_homepage.html";
-    } else if (currentRole === "teacher") {
-      window.location.href = "admin_homepage.html";
-    }
-  });
+        if (currentRole === "student") {
+            window.location.href = "std_homepage.html";
+        } else if (currentRole === "teacher") {
+            window.location.href = "admin_homepage.html";
+        }
+    });
 </script>
 
 

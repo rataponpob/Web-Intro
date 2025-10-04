@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ข้อมูลผู้ใช้งาน</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/std_homepage.css" />
+    <script src="https://kit.fontawesome.com/a2be86925b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>ระบบจัดการโครงงานพิเศษและโครงงานสหกิจ</h1>
+        <h2>ข้อมูลผู้ใช้</h2>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-role">
+            <div class="nav-tab">
+                <i class="fa-solid fa-house"></i>
+                <a href="std_homepage.html"><span>หน้าแรก</span></a>
+            </div>
+            <div class="nav-tab active">
+                <i class="fa-solid fa-user"></i>
+                <a href="user.html"><span>ข้อมูลผู้ใช้</span></a>
+            </div>
+            <div class="nav-tab logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <a href="index.html"><span>ออกจากระบบ</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="content">
+
+        <!-- ข้อมูลนักศึกษา -->
+        <div class="card" style="margin-bottom: 20px;">
+            <div class="card-top">
+                <p>ข้อมูลนักศึกษา</p>
+                <i class="fa-solid fa-user check-icon"></i>
+            </div>
+            <p><strong>ชื่อ:</strong> นายสมชาย ใจดี</p>
+            <p><strong>รหัสนักศึกษา:</strong> 9999999999999</p>
+            <p><strong>คณะ:</strong> คณะเทคโนโลยีและการจัดการอุตสาหกรรม</p>
+            <p><strong>สาขา:</strong> เทคโนโลยีสารสนเทศ</p>
+            <p><strong>ชั้นปี:</strong> ปีที่ 4</p>
+        </div>
+
+        <!-- โปรเจกต์ที่เคยยื่นแล้ว -->
+        <div class="card" style="margin-bottom: 20px;">
+            <div class="card-top">
+                <p>โครงงานที่เคยยื่นแล้ว</p>
+                <i class="fa-solid fa-file-circle-xmark cal-icon"></i>
+            </div>
+            <ul>
+                <li>ระบบจัดการร้านกาแฟ <span class="status-text">ไม่ผ่าน</span></li>
+                <li>ระบบจัดการคลังสินค้า <span class="status-pass">ผ่าน</span></li>
+            </ul>
+        </div>
+
+        <!-- โปรเจกต์ปัจจุบัน -->
+        <div class="card">
+            <div class="card-top">
+                <p>โครงงานปัจจุบัน</p>
+                <i class="fa-solid fa-diagram-project clock-icon"></i>
+            </div>
+            <p><strong>ชื่อโครงงาน:</strong> ระบบจัดการคลังสินค้า</p>
+            <p><strong>สถานะ:</strong> <span class="status-text" style="color:#ff9800;">อยู่ระหว่างพัฒนา</span></p>
+
+            <p><strong>แนวคิด:</strong></p>
+            <p>ระบบจัดการคลังสินค้าเป็นระบบที่พัฒนาขึ้นเพื่อช่วยให้การจัดเก็บและบริหารข้อมูลสินค้าเป็นไปอย่างสะดวก รวดเร็ว และมีประสิทธิภาพ</p>
+
+            <p><strong>ขอบเขต:</strong></p>
+            <ul>
+                <li>บันทึกข้อมูลสินค้า</li>
+                <li>การขายสินค้า</li>
+                <li>การนำเข้าสินค้า</li>
+                <li>รายงานสรุป</li>
+            </ul>
+
+            <p><strong>ประโยชน์:</strong></p>
+            <ul>
+                <li>เพิ่มความสะดวกและลดเวลาในการทำงาน</li>
+                <li>ลดความผิดพลาดในการจัดการข้อมูล</li>
+                <li>สามารถติดตามสถานะสินค้าได้อย่างมีประสิทธิภาพ</li>
+            </ul>
+        </div>
+
+    </main>
+</body>
+
+</html>

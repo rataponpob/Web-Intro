@@ -231,3 +231,6 @@ body {
   background-color: #444; /* โทนเทาอ่อนตอน hover */
   transform: scale(1.1);
 }
+#submitBtn:hover{
+  background-color: #111111;
+}

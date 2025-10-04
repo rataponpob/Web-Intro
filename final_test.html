@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style/admin_homepage.css" />
+    <script src="https://kit.fontawesome.com/a2be86925b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>ระบบจัดการโครงงานพิเศษและโครงงานสหกิจ</h1>
+        <h2>กรรมการ</h2>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-role">
+            <div class="nav-tab active">
+                <i class="fa-solid fa-house"></i>
+                <a href="admin_homepage.html"><span>หน้าแรก</span></a>
+            </div>
+            <div class="nav-tab">
+                <i class="fa-solid fa-user"></i>
+                <a href="user.html"><span>ข้อมูลผู้ใช้</span></a>
+            </div>
+            <div class="nav-tab logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <a href="index.html"><span>ออกจากระบบ</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="content">
+        <!-- Top row -->
+        <div class="top-row">
+            <div class="card">
+                <div class="card-top">
+                    <p>โครงงานที่รอสอบจบ</p>
+                    <i class="fa-solid fa-chart-simple clock-icon"></i>
+                </div>
+
+                <!-- ====== โครงงานแต่ละรายการ ====== -->
+                <div class="card project-card">
+                    <div class="project">
+                        <div class="project-head">
+                            <p style="font-size: 16px; font-weight: 500;">เครื่องคัดแยกขยะอัจฉริยะ</p>
+                            <p class="txt text-muted">6806022510297 นางสาว ฐิติรัตน์ แดงประเสริฐ</p>
+                            <p class="txt text-muted">อาจารย์ที่ปรึกษา : รศ.ดร.อนิราช มิ่งขวัญ</p>
+                        </div>
+                        <div class="project-action">
+                            <button class="action-btn" data-bs-toggle="modal" data-bs-target="#examScheduleModal" onclick="setProjectInfo('เครื่องคัดแยกขยะอัจฉริยะ', 'รศ.ดร.อนิราช มิ่งขวัญ')">
+                                เลือกวันสอบ
+                            </button>
+                            <button class="action-btn" data-bs-toggle="modal" data-bs-target="#projectModal1">รายละเอียด</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project">
+                        <div class="project-head">
+                            <p style="font-size: 16px; font-weight: 500;">ระบบจัดการคลังสินค้า</p>
+                            <p class="txt text-muted">
+                                6806022510238 นาย ธีรภัทร มังเทศ &nbsp; 6806022510289 นาย ลัทธพล ศิริหล้า
+                            </p>
+                            <p class="txt text-muted">อาจารย์ที่ปรึกษา : ผศ.ดร.บีสุดา ดาวเรือง</p>
+                        </div>
+                        <div class="project-action">
+                            <button class="action-btn" data-bs-toggle="modal" data-bs-target="#examScheduleModal" onclick="setProjectInfo('ระบบจัดการคลังสินค้า', 'ผศ.ดร.บีสุดา ดาวเรือง')">
+                                เลือกวันสอบ
+                            </button>
+                            <button class="action-btn" data-bs-toggle="modal" data-bs-target="#projectModal2">รายละเอียด</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project">
+                        <div class="project-head">
+                            <p style="font-size: 16px; font-weight: 500;">ระบบยืม – คืนหนังสือห้องสมุด</p>
+                            <p class="txt text-muted">
+                                6806022510041 น.ส.กนกวรรณ ศรีประไชย &nbsp; 6806022510050 นายนันทวัฒน์ นันทวิสาร
+                            </p>
+                            <p class="txt text-muted">อาจารย์ที่ปรึกษา : ผศ.ดร.พาฝัน ดวงไพศาล</p>
+                        </div>
+                        <div class="project-action">
+                            <button class="action-btn" data-bs-toggle="modal" data-bs-target="#examScheduleModal" onclick="setProjectInfo('ระบบยืม – คืนหนังสือห้องสมุด', 'ผศ.ดร.พาฝัน ดวงไพศาล')">
+                                เลือกวันสอบ
+                            </button>
+                            <button class="action-btn" data-bs-toggle="modal" data-bs-target="#projectModal3">รายละเอียด</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== MODAL 1 ====== -->
+        <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModalLabel1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark text-white">
+                        <h5 class="modal-title">รายละเอียดโครงงาน: เครื่องคัดแยกขยะอัจฉริยะ</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>ชื่อโครงงาน (อังกฤษ):</strong> Smart Waste Sorting Machine</p>
+                        <p><strong>ประเภทโครงงาน:</strong> โครงงานพิเศษ</p>
+
+                        <p><strong>สมาชิกในกลุ่ม:</strong></p>
+                        <ul>
+                            <li>6806022510297 นางสาว ฐิติรัตน์ แดงประเสริฐ</li>
+                        </ul>
+
+                        <p><strong>อาจารย์ที่ปรึกษา:</strong> รศ.ดร.อนิราช มิ่งขวัญ</p>
+                        <hr>
+
+                        <p><strong>วัตถุประสงค์ของโครงงาน:</strong></p>
+                        <ul>
+                            <li>เพื่อพัฒนาเครื่องคัดแยกขยะโดยอัตโนมัติด้วยเทคโนโลยี AI</li>
+                            <li>เพื่อช่วยลดภาระงานของเจ้าหน้าที่และเพิ่มประสิทธิภาพในการคัดแยกขยะ</li>
+                        </ul>
+
+                        <p><strong>รายละเอียด:</strong></p>
+                        <p>โครงงานนี้เป็นการพัฒนาเครื่องคัดแยกขยะโดยใช้เซนเซอร์ตรวจจับวัสดุและกล้อง AI เพื่อจำแนกประเภทขยะ เช่น ขวดพลาสติก โลหะ หรือกระดาษ และส่งไปยังถังที่ถูกต้องโดยอัตโนมัติ</p>
+
+                        <p><strong>ขอบเขตของโครงงาน:</strong></p>
+                        <ul>
+                            <li>ระบบสามารถจำแนกขยะได้ 3 ประเภท: พลาสติก โลหะ และกระดาษ</li>
+                            <li>มีหน้าจอแสดงผลชนิดขยะและปริมาณขยะในแต่ละถัง</li>
+                            <li>ไม่ครอบคลุมขยะอินทรีย์หรือขยะอันตราย</li>
+                        </ul>
+
+                        <p><strong>ไฟล์แนบ:</strong> <a href="#">waste_sorting_project.pdf</a> <a href="#">present_waste_sorting_project.pdf</a></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">ปิด</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ====== MODAL 2 ====== -->
+        <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModalLabel2" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark text-white">
+                        <h5 class="modal-title">รายละเอียดโครงงาน: ระบบจัดการคลังสินค้า</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>ชื่อโครงงาน (อังกฤษ):</strong> Warehouse Management System</p>
+                        <p><strong>ประเภทโครงงาน:</strong> โครงงานพิเศษ</p>
+
+                        <p><strong>สมาชิกในกลุ่ม:</strong></p>
+                        <ul>
+                            <li>6806022510238 นาย ธีรภัทร มังเทศ</li>
+                            <li>6806022510289 นาย ลัทธพล ศิริหล้า</li>
+                        </ul>
+
+                        <p><strong>อาจารย์ที่ปรึกษา:</strong> ผศ.ดร.บีสุดา ดาวเรือง</p>
+                        <hr>
+
+                        <p><strong>วัตถุประสงค์ของโครงงาน:</strong></p>
+                        <ul>
+                            <li>เพื่อพัฒนาระบบบริหารจัดการสินค้าภายในคลังแบบเรียลไทม์</li>
+                            <li>เพื่อลดข้อผิดพลาดในการบันทึกและค้นหาข้อมูลสินค้า</li>
+                        </ul>
+
+                        <p><strong>รายละเอียด:</strong></p>
+                        <p>ระบบจัดการคลังสินค้านี้ช่วยให้ผู้ใช้สามารถจัดเก็บ บันทึก นำเข้า และตรวจสอบสินค้าภายในคลังได้อย่างมีประสิทธิภาพ พร้อมระบบรายงานสรุปยอดสินค้าและการแจ้งเตือนสินค้าใกล้หมดอัตโนมัติ
+                        </p>
+
+                        <p><strong>ขอบเขตของโครงงาน:</strong></p>
+                        <ul>
+                            <li>รองรับการเพิ่ม แก้ไข ลบ และค้นหาข้อมูลสินค้า</li>
+                            <li>มีระบบล็อกอินสำหรับผู้ดูแลระบบเท่านั้น</li>
+                            <li>ไม่ครอบคลุมระบบจัดการการเงินหรือการขนส่งสินค้า</li>
+                        </ul>
+
+                        <p><strong>ไฟล์แนบ:</strong> <a href="#">warehouse_system_report.pdf</a> <a href="#">present_warehouse_system_report.pdf</a></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">ปิด</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== MODAL 3 ====== -->
+        <div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModalLabel3" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark text-white">
+                        <h5 class="modal-title">รายละเอียดโครงงาน: ระบบยืม – คืนหนังสือห้องสมุด</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>ชื่อโครงงาน (อังกฤษ):</strong> Library Borrowing and Returning System</p>
+                        <p><strong>ประเภทโครงงาน:</strong> โครงงานสหกิจศึกษา</p>
+
+                        <p><strong>สมาชิกในกลุ่ม:</strong></p>
+                        <ul>
+                            <li>6806022510041 น.ส.กนกวรรณ ศรีประไชย</li>
+                            <li>6806022510050 นายนันทวัฒน์ นันทวิสาร</li>
+                        </ul>
+
+                        <p><strong>อาจารย์ที่ปรึกษา:</strong> ผศ.ดร.พาฝัน ดวงไพศาล</p>
+                        <hr>
+
+                        <p><strong>วัตถุประสงค์ของโครงงาน:</strong></p>
+                        <ul>
+                            <li>เพื่อพัฒนาระบบยืม-คืนหนังสืออัตโนมัติสำหรับห้องสมุด</li>
+                            <li>เพื่อให้ผู้ใช้สามารถตรวจสอบสถานะหนังสือและประวัติการยืมได้ง่ายขึ้น</li>
+                        </ul>
+
+                        <p><strong>รายละเอียด:</strong></p>
+                        <p>ระบบนี้ช่วยให้เจ้าหน้าที่สามารถจัดการข้อมูลหนังสือ การยืม-คืน และสถิติการใช้งานของผู้ใช้ได้สะดวกขึ้น มีฟังก์ชันแจ้งเตือนกำหนดคืนหนังสืออัตโนมัติผ่านระบบออนไลน์
+                        </p>
+
+                        <p><strong>ขอบเขตของโครงงาน:</strong></p>
+                        <ul>
+                            <li>รองรับการยืม-คืนหนังสือผ่านระบบเว็บแอปพลิเคชัน</li>
+                            <li>แสดงข้อมูลหนังสือ สถานะ และประวัติการยืมของสมาชิก</li>
+                            <li>ไม่รวมระบบจองหนังสือหรือการเชื่อมต่อกับฐานข้อมูลสถาบันภายนอก</li>
+                        </ul>
+
+                        <p><strong>ไฟล์แนบ:</strong> <a href="#">library_project_report.pdf</a> <a href="#">present_library_project_report.pdf</a></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">ปิด</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== MODAL เลือกวันสอบ ====== -->
+        <div class="modal fade" id="examScheduleModal" tabindex="-1" aria-labelledby="examScheduleLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <!-- Header -->
+                    <div class="modal-header bg-dark text-white">
+                        <h5 class="modal-title" id="examScheduleLabel">กำหนดวันสอบโครงงาน</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="modal-body">
+                        <form id="examScheduleForm">
+
+                            <!-- ชื่อโครงงาน -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">ชื่อโครงงาน</label>
+                                <input type="text" class="form-control rounded-pill" id="projectName" readonly />
+                            </div>
+
+                            <!-- วันสอบ -->
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">วันสอบ</label>
+                                    <input type="date" class="form-control rounded-pill" required />
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold">เวลาเริ่ม</label>
+                                    <input type="time" class="form-control rounded-pill" required />
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold">เวลาสิ้นสุด</label>
+                                    <input type="time" class="form-control rounded-pill" required />
+                                </div>
+                            </div>
+
+                            <!-- สถานที่ -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">สถานที่สอบ</label>
+                                <input type="text" class="form-control rounded-pill" placeholder="เช่น ห้อง IT401 หรือ ห้องประชุมคณะ" required />
+                            </div>
+
+                            <!-- กรรมการสอบ -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold text-danger">กรรมการสอบ</label>
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <label class="form-label">อาจารย์ที่ปรึกษาโครงงาน</label>
+                                        <input type="text" class="form-control rounded-pill" id="advisorName" readonly />
+                                    </div>
+
+
+                                    <div class="col-md-4">
+                                        <label class="form-label">อาจารย์ประจำวิชา</label>
+                                        <select class="form-select rounded-pill" required>
+                                            <option selected disabled>เลือกประจำวิชา</option>
+                                            <option>รศ.ดร.อนิราช มิ่งขวัญ</option>
+                                            <option>ผศ.อรบุษป์ วุฒิกมลชัย</option>
+                                            <option>ผศ.ดร.บีสุดา ดาวเรือง</option>
+                                            <option>ผศ.ดร.ขนิษฐา นามี</option>
+                                            <option>อ.ดร.กาญจน ณ ศรีธะ</option>
+                                            <option>ผศ.นพดล บูรณ์กุศล</option>
+                                            <option>ผศ.จสต.นพเก้า ทองใบ</option>
+                                            <option>ผศ.ดร.นิติการ นาคเจือทอง</option>
+                                            <option>ผศ.ดร.นัฎฐพันธ์ นาคพงษ์</option>
+                                            <option>ผศ.นิมิต ศรีคำทา</option>
+                                            <option>อ.ดร.พิทย์พิมล ชูรอด</option>
+                                            <option>ผศ.ดร.พาฝัน ดวงไพศาล</option>
+                                            <option>อ.ดร.ประดิษฐ์ พิทักษ์เสถียรกุล</option>
+                                            <option>ผศ.พีระศักดิ์ เสรีกุล</option>
+                                            <option>ผศ.สมชัย เชียงพงศ์พันธุ์</option>
+                                            <option>ผศ.ดร.สุปีติ กุลจันทร์</option>
+                                            <option>ผศ.สิวาลัย จินเจือ</option>
+                                            <option>ผศ.ดร.สุพาภรณ์ ซิ้มเจริญ</option>
+                                            <option>ผศ.ดร.ศรายุทธ ธเนศสกุลวัฒนา</option>
+                                            <option>อ.ดร.ศิรินทรา แว่วศรี</option>
+                                            <option>อ.ดร.วัชรชัย คงศิริวัฒนา</option>
+                                            <option>ผศ.ดร.วันทนี ประจวบศุภกิจ</option>
+                                            <option>รศ.ดร.ยุพิน สรรพคุณ</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label class="form-label">กรรมการ</label>
+                                        <select class="form-select rounded-pill" required>
+                                            <option selected disabled>เลือกกรรมการ</option>
+                                            <option>คุณลัดดา ตั้งเกียรติศิริ</option>
+                                            <option>คุณอุไรวรรณ วัตรยิ่ง</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">ยกเลิก</button>
+                        <button type="submit" form="examScheduleForm" class="btn btn-dark rounded-pill">บันทึกข้อมูล</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="top-row">
+            <div class="card">
+                <div class="card-top">
+                    <p>โครงงานที่รอผลการสอบจบ</p>
+                    <i class="fa-solid fa-bell bell-icon"></i>
+                    <!-- <i class="fa-solid fa-chart-simple clock-icon"></i> -->
+                </div>
+
+                <!-- ====== โครงงานแต่ละรายการ ====== -->
+                <div class="card project-card">
+                    <div class="project">
+                        <div class="project-head">
+                            <p style="font-size: 16px; font-weight: 500;">เครื่องคัดแยกขยะอัจฉริยะ</p>
+                            <p class="txt text-muted">6806022510297 นางสาว ฐิติรัตน์ แดงประเสริฐ</p>
+                            <p class="txt text-muted">อาจารย์ที่ปรึกษา : รศ.ดร.อนิราช มิ่งขวัญ</p>
+                        </div>
+                        <div class="project-action">
+                            <button class="action-btn" data-bs-toggle="modal" data-bs-target="#examResultModal" onclick="setProjectInfo('เครื่องคัดแยกขยะอัจฉริยะ', 'รศ.ดร.อนิราช มิ่งขวัญ')">
+                                ระบุผลสอบ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project">
+                        <div class="project-head">
+                            <p style="font-size: 16px; font-weight: 500;">ระบบจัดการคลังสินค้า</p>
+                            <p class="txt text-muted">
+                                6806022510238 นาย ธีรภัทร มังเทศ &nbsp; 6806022510289 นาย ลัทธพล ศิริหล้า
+                            </p>
+                            <p class="txt text-muted">อาจารย์ที่ปรึกษา : ผศ.ดร.บีสุดา ดาวเรือง</p>
+                        </div>
+                        <div class="project-action">
+                            <button class="action-btn" data-bs-toggle="modal" data-bs-target="#examResultModal" onclick="setProjectInfo('ระบบจัดการคลังสินค้า', 'ผศ.ดร.บีสุดา ดาวเรือง')">
+                                ระบุผลสอบ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project">
+                        <div class="project-head">
+                            <p style="font-size: 16px; font-weight: 500;">ระบบยืม – คืนหนังสือห้องสมุด</p>
+                            <p class="txt text-muted">
+                                6806022510041 น.ส.กนกวรรณ ศรีประไชย &nbsp; 6806022510050 นายนันทวัฒน์ นันทวิสาร
+                            </p>
+                            <p class="txt text-muted">อาจารย์ที่ปรึกษา : ผศ.ดร.พาฝัน ดวงไพศาล</p>
+                        </div>
+                        <div class="project-action">
+                            <button class="action-btn" data-bs-toggle="modal" data-bs-target="#examResultModal" onclick="setProjectInfo('ระบบยืม – คืนหนังสือห้องสมุด', 'ผศ.ดร.พาฝัน ดวงไพศาล')">
+                                ระบุผลสอบ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+<!-- ====== MODAL ระบุผลสอบ ====== -->
+<div class="modal fade" id="examResultModal" tabindex="-1" aria-labelledby="examResultLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Header -->
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title" id="examResultLabel">ระบุผลสอบโครงงาน</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Body -->
+            <div class="modal-body">
+                <form id="examResultForm">
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">ชื่อโครงงาน</label>
+                        <input type="text" class="form-control rounded-pill" id="resultProjectName" readonly />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">ผลการสอบ</label>
+                        <select class="form-select rounded-pill" id="examStatus" required onchange="toggleCommentBox()">
+                            <option selected disabled>-- เลือกสถานะผลสอบ --</option>
+                            <option value="ผ่าน">สอบผ่าน</option>
+                            <option value="แก้ไข">สอบผ่าน แต่ต้องแก้ไข</option>
+                            <option value="ไม่ผ่าน">สอบไม่ผ่าน</option>
+                        </select>
+                    </div>
+
+                    <!-- ช่องคอมเมนต์ -->
+                    <div class="mb-3" id="commentBox" style="display:none;">
+                        <label class="form-label fw-semibold">รายละเอียด / ข้อเสนอแนะเพิ่มเติม</label>
+                        <textarea class="form-control rounded-3" rows="3" placeholder="ระบุรายละเอียดเพิ่มเติมที่ต้องแก้ไข..."></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">ยกเลิก</button>
+                <button type="submit" form="examResultForm" class="btn btn-dark rounded-pill">ยืนยันผลสอบ</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/a2be86925b.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<script>
+    function setProjectInfo(projectName, advisorName) {
+        // สำหรับ modal เลือกวันสอบ
+        const projectInput = document.getElementById("projectName");
+        const advisorInput = document.getElementById("advisorName");
+        if (projectInput && advisorInput) {
+            projectInput.value = projectName;
+            advisorInput.value = advisorName;
+            advisorInput.readOnly = true;
+        }
+
+        // สำหรับ modal ระบุผลสอบ
+        const resultInput = document.getElementById("resultProjectName");
+        if (resultInput) {
+            resultInput.value = projectName;
+        }
+    }
+
+    // แสดง/ซ่อนช่องคอมเมนต์
+    function toggleCommentBox() {
+        const status = document.getElementById("examStatus").value;
+        const commentBox = document.getElementById("commentBox");
+        commentBox.style.display = (status === "แก้ไข") ? "block" : "none";
+    }
+
+    // เมื่อกดยืนยันผลสอบ
+    document.getElementById("examResultForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        Swal.fire({
+            title: "สำเร็จ!",
+            text: "ระบุผลสอบเรียบร้อยแล้ว",
+            icon: "success",
+            confirmButtonText: "ตกลง",
+            confirmButtonColor: "#212529"
+        }).then(() => {
+            const modal = bootstrap.Modal.getInstance(document.getElementById("examResultModal"));
+            modal.hide();
+        });
+    });
+</script>
+
+
+
+</html>

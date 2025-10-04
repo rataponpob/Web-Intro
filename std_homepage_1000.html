@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./style/std_homepage.css" />
     <script src="https://kit.fontawesome.com/a2be86925b.js" crossorigin="anonymous"></script>
 </head>
@@ -45,7 +45,7 @@
                     <p>สถานะโครงงาน</p>
                     <i class="fa-solid fa-check check-icon"></i>
                 </div>
-                <span class="status">ไม่มี</span>
+                <span class="status">รอแนบรูปเล่ม</span>
             </div>
 
             <div class="card">
@@ -54,9 +54,9 @@
                     <i class="fa-solid fa-clock clock-icon"></i>
                 </div>
                 <div class="progress">
-                    <div class="progress-bar" style="width: 0%"></div>
+                    <div class="progress-bar" style="width: 100%;background-color: #0faa55f1;"></div>
                 </div>
-                <small>0%</small>
+                <small>100%</small>
             </div>
 
             <div class="card">
@@ -64,37 +64,58 @@
                     <p>อัปเดตโครงงานล่าสุด</p>
                     <i class="fa-solid fa-calendar-days cal-icon"></i>
                 </div>
-                <span class="date">30/8/2568</span>
+                <span class="date">28/12/2568</span>
             </div>
         </div>
 
         <!-- Grid of 4 -->
         <div class="grid-box">
             <div class="card">
-                <h3>เสนอโครงงาน</h3>
-                <p>เริ่มต้นโครงงานด้วยการเสนอโครงการใหม่ของคุณ</p>
-                <a href="pre_project.html"><button class="btn">เสนอหัวข้อโครงงาน</button></a>
+                <h3>รายงานความก้าวหน้า</h3>
+                <p>รายงานความก้าวหน้าครบทุกครั้งแล้ว</p>
             </div>
 
             <div class="card">
                 <h3>การสอบของคุณ</h3>
-                <p>ยังไม่ได้ยื่นขอสอบหัวข้อ</p>
+                <p>29 ธันวาคม 2568 &nbsp;เวลา 13.00 น.</p>
+                <p>ห้อง B4-02</p>
             </div>
 
             <div class="card">
                 <h3>ติดตามผลการสอบ</h3>
-                <p>ยังไม่ได้ยื่นขอสอบหัวข้อ</p>
+                <p class="status-pass">ผ่าน</p>
             </div>
 
             <div class="card">
                 <h3>ยื่นสอบจบ</h3>
-                <p class="status-text">ไม่สามารถยื่นสอบได้</p>
+                <p>กรุณาแนบรูปเล่มที่เสร็จสมบูรณ์ (.pdf)</p>
+                <label class="form-label">อัพโหลดไฟล์</label>
+                <input type="file" class="form-control mb-3" />
+
+                <div style="display: flex; justify-content: center">
+                    <a href="#">
+                        <button class="btn" id="submitFinal">ส่ง</button>
+                    </a>
+                </div>
             </div>
         </div>
     </main>
 </body>
 
-
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.getElementById("submitFinal").addEventListener("click", function() {
+        Swal.fire({
+            icon: 'success',
+            title: 'แนบเอกสารสำเร็จ',
+            text: 'กรุณารอติดตามสถานะโครงงานผ่านทางระบบ',
+            confirmButtonText: 'ตกลง',
+            confirmButtonColor: '#3085d6'
+        }).then(() => {
+            // ตัวอย่าง redirect ถ้าต้องการหลังจากกดตกลง
+            window.location.href = "std_homepage_10000.html";
+        });
+    });
+</script>
 
 </html>
